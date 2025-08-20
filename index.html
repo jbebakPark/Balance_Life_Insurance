@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼성 밸런스 종신보험 비즈니스 제안서</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page:last-child {
+            page-break-after: auto;
+        }
+        
+        /* Samsung Brand Colors */
+        .samsung-blue { color: #1f4e79; }
+        .samsung-navy { color: #003366; }
+        .samsung-silver { background: #f8f9fa; }
+        
+        /* Page 1 Styles */
+        .header {
+            background: linear-gradient(135deg, #1f4e79 0%, #003366 100%);
+            color: white;
+            padding: 40px 60px;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(135deg, #1f4e79 0%, #003366 100%);
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        }
+        
+        .logo-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .samsung-logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .patent-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .main-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            padding: 50px 60px;
+        }
+        
+        .section-title {
+            color: #1f4e79;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            border-left: 4px solid #1f4e79;
+            padding-left: 15px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #1f4e79;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(31,78,121,0.15);
+        }
+        
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: #1f4e79;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1f4e79;
+            margin-bottom: 10px;
+        }
+        
+        .feature-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            border: 2px solid #1f4e79;
+        }
+        
+        .highlight-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1f4e79;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-text {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .award-section {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+            border: 2px solid #ff9800;
+        }
+        
+        .award-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .award-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+        
+        .award-desc {
+            font-size: 16px;
+            color: #333;
+        }
+        
+        /* Page 2 Styles */
+        .page-2-header {
+            background: #003366;
+            color: white;
+            padding: 30px 60px;
+            text-align: center;
+        }
+        
+        .page-2-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .urgency-banner {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: white;
+            padding: 25px 60px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .urgency-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        .urgency-desc {
+            font-size: 16px;
+            font-weight: 300;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .stats-section {
+            padding: 40px 60px;
+            background: #f8f9fa;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 64px;
+            font-weight: 700;
+            color: #1f4e79;
+            margin-bottom: 15px;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .benefits-section {
+            padding: 40px 60px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid #1f4e79;
+        }
+        
+        .benefit-number {
+            width: 50px;
+            height: 50px;
+            background: #1f4e79;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+        
+        .benefit-text {
+            flex: 1;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .contact-section {
+            background: #003366;
+            color: white;
+            padding: 40px 60px;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-phone {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffd700;
+            margin-top: 15px;
+        }
+        
+        .action-button {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb300 100%);
+            color: #003366;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .action-button:hover {
+            transform: scale(1.05);
+        }
+        
+        @media print {
+            .page {
+                box-shadow: none;
+                margin: 0;
+                width: 210mm;
+                min-height: 297mm;
+                page-break-after: always;
+            }
+            
+            .page:last-child {
+                page-break-after: avoid;
+            }
+            
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .header {
+                background: #1f4e79 !important;
+                color: white !important;
+            }
+            
+            .urgency-banner {
+                background: #d32f2f !important;
+                color: white !important;
+            }
+            
+            .page-2-header {
+                background: #003366 !important;
+                color: white !important;
+            }
+            
+            .contact-section {
+                background: #003366 !important;
+                color: white !important;
+            }
+            
+            .feature-card {
+                border: 2px solid #1f4e79;
+                background: #f8f9fa !important;
+            }
+            
+            .highlight-box {
+                border: 3px solid #1f4e79 !important;
+                background: #e3f2fd !important;
+            }
+            
+            .award-section {
+                border: 3px solid #ff9800 !important;
+                background: #fff3e0 !important;
+            }
+            
+            .stat-card {
+                border: 2px solid #1f4e79;
+                background: white !important;
+            }
+            
+            .benefit-item {
+                border-left: 5px solid #1f4e79 !important;
+                background: white !important;
+            }
+            
+            .benefit-number {
+                background: #1f4e79 !important;
+                color: white !important;
+            }
+            
+            .feature-icon {
+                background: #1f4e79 !important;
+                color: white !important;
+            }
+            
+            a {
+                color: inherit !important;
+            }
+            
+            .contact-phone a {
+                color: #ffd700 !important;
+            }
+            
+            .action-button {
+                background: #ffd700 !important;
+                color: #003366 !important;
+                border: 2px solid #003366;
+            }
+            
+            /* 인쇄 시 애니메이션 제거 */
+            .urgency-title {
+                animation: none !important;
+            }
+            
+            /* 인쇄용 폰트 크기 조정 */
+            .main-title {
+                font-size: 38px;
+            }
+            
+            .page-2-title {
+                font-size: 24px;
+            }
+            
+            .urgency-title {
+                font-size: 28px;
+            }
+            
+            .stat-number {
+                font-size: 48px;
+            }
+            
+            /* 페이지 여백 최적화 */
+            .content-section {
+                padding: 40px 50px;
+            }
+            
+            .stats-section {
+                padding: 30px 50px;
+            }
+            
+            .benefits-section {
+                padding: 30px 50px;
+            }
+            
+            .contact-section {
+                padding: 30px 50px;
+            }
+        }
+        
+        /* 일반 화면용 스타일 */
+        @media screen {
+            .page {
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="header">
+            <div class="logo-section">
+                <div class="samsung-logo">SAMSUNG LIFE</div>
+                <div class="patent-badge">특허등록번호: 10-2775775</div>
+            </div>
+            <h1 class="main-title">밸런스 종신보험</h1>
+            <p class="subtitle">특허받은 노후 준비 솔루션</p>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">핵심 특허 기술</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-title">200% 연금 보장</div>
+                    <div class="feature-desc">납입 보험료의 2배를 총 연금액으로 보장하는 독보적 구조</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">금리 독립성</div>
+                    <div class="feature-desc">금리 변동과 관계없이 안정적인 연금 수령 보장</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <div class="feature-title">생존 보장</div>
+                    <div class="feature-desc">생존 여부와 무관하게 약정된 연금액 완전 지급</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <div class="feature-title">유연성</div>
+                    <div class="feature-desc">필요시 중도 해지 가능한 탄력적 운용</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-number">200%</div>
+                <div class="highlight-text">납입 보험료 대비 연금 보장률</div>
+            </div>
+            
+            <div class="award-section">
+                <div class="award-icon">🏆</div>
+                <div class="award-title">2024년 명예의 전당 수상</div>
+                <div class="award-desc">"소비자가 가장 사랑한 금융 상품"</div>
+                <a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202412160072&t=N" target="_blank" 
+                   style="display: inline-block; margin-top: 15px; padding: 10px 25px; background: #e65100; color: white; text-decoration: none; border-radius: 25px; font-size: 14px; font-weight: 500; transition: background 0.3s ease;">
+                    📰 2024년 명예의 전당 보도자료 보기
+                </a>
+                
+                <a href="https://www.donga.com/news/article/all/20250819/132214949/2" target="_blank" 
+                   style="display: inline-block; margin-top: 10px; padding: 10px 25px; background: #1f4e79; color: white; text-decoration: none; border-radius: 25px; font-size: 14px; font-weight: 500; transition: background 0.3s ease;">
+                    📰 사망보험금, 55세부터 연금처럼 받을수 있다<br>[중앙일보 2025년 8월 20일 03시 00분]
+                </a>
+                
+                <a href="https://www.mbn.co.kr/news/economy/5134925" target="_blank" 
+                   style="display: inline-block; margin-top: 10px; padding: 10px 25px; background: #003366; color: white; text-decoration: none; border-radius: 25px; font-size: 14px; font-weight: 500; transition: background 0.3s ease;">
+                    📰 사망보험금 55세부터 연금으로 미리 받는다…<br>출처 : MBN뉴스 2025-08-20 08:07
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 2 -->
+    <div class="page">
+        <div class="page-2-header">
+            <h1 class="page-2-title">한정 판매 상품 안내</h1>
+        </div>
+        
+        <div class="urgency-banner">
+            <h2 class="urgency-title">판매 중단 예고</h2>
+            <p class="urgency-desc">회사 부담 최소화를 위한 조기 마감 예정</p>
+        </div>
+        
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">700만</div>
+                    <div class="stat-label">누적 판매량 (대)</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">2024</div>
+                    <div class="stat-label">명예의 전당 선정</div>
+                </div>
+            </div>
+            
+            <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-top: 30px;">
+                <h3 style="color: #1f4e79; font-size: 18px; font-weight: 700; margin-bottom: 15px; text-align: center;">📈 시장 검증된 상품력</h3>
+                <p style="font-size: 14px; color: #666; line-height: 1.6; text-align: center;">
+                    WOW TV 보도에 따르면, 삼성 밸런스 종신보험은 <strong style="color: #1f4e79;">"올 한 해 많은 소비자들의 사랑을 받으며 2024년 명예의 전당에 선정"</strong>되었으며, 
+                    가입나이 만15세부터 60세까지, 다양한 납입기간 선택이 가능한 <strong style="color: #1f4e79;">검증된 대표 인기상품</strong>입니다.
+                </p>
+            </div>
+        </div>
+        
+        <div class="benefits-section">
+            <h2 class="section-title">비즈니스 리더를 위한 핵심 가치</h2>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">1</div>
+                <div class="benefit-text">안정적인 노후 자금 확보로 경영 리스크 분산</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">2</div>
+                <div class="benefit-text">특허받은 종신형 신연금구조로 차별화된 투자</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">3</div>
+                <div class="benefit-text">금리 변동에 영향받지 않는 안전한 자산 배분</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">4</div>
+                <div class="benefit-text">중도 해지 가능으로 자금 운용의 유연성 확보</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">5</div>
+                <div class="benefit-text">세제 혜택과 함께 효율적인 자산 증식</div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h3 class="contact-title">전문 상담 및 가입 문의</h3>
+            <div class="contact-info">삼성생명 GFC 사업부</div>
+            <div class="contact-info">박재박 팀장</div>
+            <div class="contact-phone">📞 <a href="tel:010-5137-2327" style="color: #ffd700; text-decoration: none;">010-5137-2327</a></div>
+            <a href="https://open.kakao.com/o/s15lHyCh" target="_blank" class="action-button">지금 상담 신청하기<br>카톡 1:1 맞춤 채널 연결</a>
+        </div>
+    </div>
+</body>
+</html>
