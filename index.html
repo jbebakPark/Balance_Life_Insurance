@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼성 밸런스 종신보험 비즈니스 제안서</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-size: 14px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 100vw;
+            margin: 0 auto;
+            background: white;
+            overflow-x: hidden;
+        }
+        
+        /* Samsung Brand Colors */
+        .samsung-blue { color: #1f4e79; }
+        .samsung-navy { color: #003366; }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #1f4e79 0%, #003366 100%);
+            color: white;
+            padding: 20px 15px 30px 15px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: linear-gradient(135deg, #1f4e79 0%, #003366 100%);
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        }
+        
+        .logo-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .samsung-logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .patent-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .main-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            padding: 30px 15px;
+        }
+        
+        .section-title {
+            color: #1f4e79;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-left: 4px solid #1f4e79;
+            padding-left: 12px;
+        }
+        
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #1f4e79;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:active {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(31,78,121,0.15);
+        }
+        
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .feature-icon {
+            width: 35px;
+            height: 35px;
+            background: #1f4e79;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+        
+        .feature-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1f4e79;
+        }
+        
+        .feature-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+            padding-left: 47px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 25px 0;
+            border: 2px solid #1f4e79;
+        }
+        
+        .highlight-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1f4e79;
+            margin-bottom: 8px;
+        }
+        
+        .highlight-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .award-section {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 25px 0;
+            border: 2px solid #ff9800;
+        }
+        
+        .award-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .award-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #e65100;
+            margin-bottom: 8px;
+        }
+        
+        .award-desc {
+            font-size: 14px;
+            color: #333;
+        }
+        
+        /* Page 2 Styles */
+        .page-2-header {
+            background: #003366;
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+        }
+        
+        .page-2-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .urgency-banner {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .urgency-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        .urgency-desc {
+            font-size: 14px;
+            font-weight: 300;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .stats-section {
+            padding: 30px 15px;
+            background: #f8f9fa;
+        }
+        
+        .stats-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1f4e79;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .benefits-section {
+            padding: 30px 15px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 18px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid #1f4e79;
+        }
+        
+        .benefit-number {
+            width: 40px;
+            height: 40px;
+            background: #1f4e79;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .benefit-text {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .contact-section {
+            background: #003366;
+            color: white;
+            padding: 30px 15px;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .contact-phone {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffd700;
+            margin: 15px 0;
+            word-break: break-all;
+        }
+        
+        .action-button {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb300 100%);
+            color: #003366;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .action-button:active {
+            transform: scale(0.95);
+        }
+        
+        /* Responsive breakpoints */
+        @media (min-width: 480px) {
+            .main-title {
+                font-size: 32px;
+            }
+            
+            .feature-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            
+            .stats-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+                margin: 20px auto;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            
+            .header {
+                border-radius: 15px 15px 0 0;
+            }
+        }
+        
+        /* Touch-friendly interactions */
+        @media (hover: none) and (pointer: coarse) {
+            .feature-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            
+            .action-button:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="samsung-logo">SAMSUNG LIFE</div>
+                <div class="patent-badge">특허등록번호: 10-2775775</div>
+            </div>
+            <h1 class="main-title">밸런스 종신보험</h1>
+            <p class="subtitle">특허받은 노후 준비 솔루션</p>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">핵심 특허 기술</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-title">200% 연금 보장</div>
+                    </div>
+                    <div class="feature-desc">납입 보험료의 2배를 총 연금액으로 보장하는 독보적 구조</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-title">금리 독립성</div>
+                    </div>
+                    <div class="feature-desc">금리 변동과 관계없이 안정적인 연금 수령 보장</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">🛡️</div>
+                        <div class="feature-title">생존 보장</div>
+                    </div>
+                    <div class="feature-desc">생존 여부와 무관하게 약정된 연금액 완전 지급</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">✅</div>
+                        <div class="feature-title">유연성</div>
+                    </div>
+                    <div class="feature-desc">필요시 중도 해지 가능한 탄력적 운용</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-number">200%</div>
+                <div class="highlight-text">납입 보험료 대비 연금 보장률</div>
+            </div>
+            
+            <div class="award-section">
+                <div class="award-icon">🏆</div>
+                <div class="award-title">2024년 명예의 전당 수상</div>
+                <div class="award-desc">"소비자가 가장 사랑한 금융 상품"</div>
+            </div>
+        </div>
+        
+        <!-- Page 2 Content -->
+        <div class="page-2-header">
+            <h1 class="page-2-title">한정 판매 상품 안내</h1>
+        </div>
+        
+        <div class="urgency-banner">
+            <h2 class="urgency-title">판매 중단 예고</h2>
+            <p class="urgency-desc">회사 부담 최소화를 위한 조기 마감 예정</p>
+        </div>
+        
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">700만</div>
+                    <div class="stat-label">누적 판매량 (대)</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">1위</div>
+                    <div class="stat-label">고객 만족도</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="benefits-section">
+            <h2 class="section-title">비즈니스 리더를 위한 핵심 가치</h2>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">1</div>
+                <div class="benefit-text">안정적인 노후 자금 확보로 경영 리스크 분산</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">2</div>
+                <div class="benefit-text">특허받은 종신형 신연금구조로 차별화된 투자</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">3</div>
+                <div class="benefit-text">금리 변동에 영향받지 않는 안전한 자산 배분</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">4</div>
+                <div class="benefit-text">중도 해지 가능으로 자금 운용의 유연성 확보</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">5</div>
+                <div class="benefit-text">세제 혜택과 함께 효율적인 자산 증식</div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h3 class="contact-title">전문 상담 및 가입 문의</h3>
+            <div class="contact-info">삼성생명 GFC 사업부</div>
+            <div class="contact-info">박재박 팀장</div>
+            <div class="contact-phone">📞 010-5137-2327</div>
+            <button class="action-button" onclick="window.location.href='tel:010-5137-2327'">지금 상담 신청하기</button>
+        </div>
+    </div>
+</body>
+</html>
